@@ -14,20 +14,45 @@
             margin: 0;
             background-color: #f0f0f0;
         }
-        #menu, .memory-game {
-            display: none;
-        }
+
+        /* Menu de início centralizado */
         #menu {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100%; /* Ocupa 100% da altura da tela */
         }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Jogo da memória escondido inicialmente */
         .memory-game {
+            display: none;
             width: 360px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
         }
+
         .memory-card {
             width: 70px;
             height: 70px;
@@ -39,6 +64,7 @@
             background-color: #333;
             border-radius: 8px;
         }
+
         .memory-card img {
             width: 100%;
             height: 100%;
@@ -46,26 +72,17 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             display: none;
         }
+
         .memory-card.flipped img {
             display: block;
         }
+
         .error-counter {
             font-size: 18px;
             color: red;
             margin-top: 10px;
         }
-        button {
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
+
     </style>
 </head>
 <body>
@@ -228,8 +245,8 @@
 
         // Função para resetar o jogo e voltar ao menu
         function resetGame() {
-            alert("Game Over! Você perdeu.");
-            document.getElementById('menu').style.display = 'flex';
+            alert('Game Over! Você perdeu.');
+            document.getElementById('menu').style.display = 'block';
             gameContainer.style.display = 'none';
         }
 
@@ -243,6 +260,8 @@
 
         // Adiciona o evento de clique no botão de início
         document.getElementById('startButton').addEventListener('click', startGame);
+
     </script>
 </body>
 </html>
+
